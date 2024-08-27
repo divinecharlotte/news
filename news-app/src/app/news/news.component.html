@@ -1,0 +1,23 @@
+<div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8" *ngIf="newsList.length">
+<div class="group relative" #newsRef *ngFor="let news of newsList | slice:0:10">
+  <a [routerLink]="['/home', news.id]">
+  <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+    
+    <img [src]="news.urlToImage" alt="News image" *ngIf="news.urlToImage"class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+  </div>
+  <h2>{{news.title}}</h2>
+
+  </a>
+</div>
+</div>
+
+  <h2 class="font-bold text-center">News publishers that are available </h2>
+  <ul  role="list" class="m-10 text-center border round rounded-md grid grid-cols-4  gap-8 divide-y divide-gray-100">
+    <li *ngFor="let news of newsList" class="flex justify-between  p-5">
+
+          <p class="text-sm font-semibold leading-6 text-gray-900">{{news.source.id}}</p>
+          <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{news.source.name}}</p>
+
+
+    </li>
+    </ul>
