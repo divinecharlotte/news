@@ -31,7 +31,10 @@
   *ngIf="filterenews.length"
 >
   <div class="group relative" #newsRef *ngFor="let news of filterenews">
-    <a [routerLink]="['/news', news.title | slugify]">
+    <a
+      (click)="navigateToNewsDetails(news.title)"
+      [routerLink]="['/news', news.title | slugify]"
+    >
       <div
         class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
       >

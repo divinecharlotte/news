@@ -5,7 +5,7 @@ import { NewServiceService } from '../new-service.service';
 @Component({
   selector: 'app-news-details',
   templateUrl: './newsDetails.component.html',
-  styleUrls: ['./newsDetails.component.css']
+  styleUrls: []
 })
 export class NewsDetailsComponent implements OnInit {
   newsDetails: any;
