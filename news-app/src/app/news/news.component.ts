@@ -45,15 +45,26 @@ export class NewsComponent implements OnInit {
     console.log("auuuuuuuuuuuuuuuuuuuuuuuuuuuuu",this.newsList);
   }
 
+ 
   searchNews() {
     if (this.searchKeyword.trim() === '') {
       this.filterenews = [...this.newsList];
     } else {
       this.filterenews = this.newsList.filter(news =>
-        news.title.toLowerCase().includes(this.searchKeyword.toLowerCase()) ||
-        news.description.toLowerCase().includes(this.searchKeyword.toLowerCase())
+        (news.title?.toLowerCase().includes(this.searchKeyword.toLowerCase()))
       );
     }
   }
+  
+
+  // searchNews() {
+  //   if (this.searchKeyword.trim() === '') {
+  //     this.filterenews = [...this.newsList];
+  //   } else {
+  //     this.filterenews = this.newsList.filter(news =>
+  //       (news.title?.toLowerCase().includes(this.searchKeyword.toLowerCase()))
+  //     );
+  //   }
+  // }
 
 }
