@@ -8,7 +8,7 @@ import { NewsDetailsComponent } from '../newsDetails/newsDetails.component';
 
 const routes: Routes = [
   { path: 'home', component: NewsComponent },
-  { path: 'home/:id', component: NewsDetailsComponent},
+  { path: 'home/:title', component: NewsDetailsComponent},
   { path: '**', redirectTo: '' } 
 ];
 

@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { NewsDetailsComponent } from './newsDetails/newsDetails.component';
+import { SlugifyPipe } from './slugify.pipe';
 
 @NgModule({
   declarations: [			
     AppComponent,
       NewsComponent,
       NewsDetailsComponent,
-      NewsDetailsComponent
+      NewsDetailsComponent,
+      SlugifyPipe
    ],
   imports: [
     BrowserModule,
