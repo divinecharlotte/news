@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
-
 })
 export class NewsComponent implements OnInit {
   newsList: any[] = [];
@@ -18,7 +17,7 @@ export class NewsComponent implements OnInit {
   constructor(private newsService: NewServiceService, private router: Router) {}
 
   ngOnInit(): void {
-    this.newsService.getNews().subscribe(data => {
+    this.newsService.getNews().subscribe((data) => {
       this.originalNewsList = data.articles;
       this.newsList = [...this.originalNewsList];
     });
@@ -40,31 +39,18 @@ export class NewsComponent implements OnInit {
   }
 
   filterNewsBySource(sourceName: string) {
-    this.filterenews = this.newsList.filter(news => news.source.name === sourceName);
-    console.log("aaaaaaaaaaaaaaaaaaaaaaa",this.filterenews);
-    console.log("auuuuuuuuuuuuuuuuuuuuuuuuuuuuu",this.newsList);
+    this.filterenews = this.newsList.filter(
+      (news) => news.source.name === sourceName
+    );
   }
 
- 
   searchNews() {
     if (this.searchKeyword.trim() === '') {
       this.filterenews = [...this.newsList];
     } else {
-      this.filterenews = this.newsList.filter(news =>
-        (news.title?.toLowerCase().includes(this.searchKeyword.toLowerCase()))
+      this.filterenews = this.newsList.filter((news) =>
+        news.title?.toLowerCase().includes(this.searchKeyword.toLowerCase())
       );
     }
   }
-  
-
-  // searchNews() {
-  //   if (this.searchKeyword.trim() === '') {
-  //     this.filterenews = [...this.newsList];
-  //   } else {
-  //     this.filterenews = this.newsList.filter(news =>
-  //       (news.title?.toLowerCase().includes(this.searchKeyword.toLowerCase()))
-  //     );
-  //   }
-  // }
-
 }
