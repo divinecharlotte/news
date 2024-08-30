@@ -9,23 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { NewsDetailsComponent } from './newsDetails/newsDetails.component';
-import { SlugifyPipe } from './slugify.pipe';
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
-      NewsComponent,
-      NewsDetailsComponent,
-      NewsDetailsComponent,
-      SlugifyPipe
-   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    AppRoutingModule,
+    NewsComponent,
+    NewsDetailsComponent,
+    NewsDetailsComponent,
   ],
+  imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   providers: [NewServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
