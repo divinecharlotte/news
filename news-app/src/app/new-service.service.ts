@@ -14,8 +14,8 @@ constructor(private http: HttpClient) { }
 getNews(): Observable<any> {
   return this.http.get<any>(environment.apiUrl);
 }
-getNewsById(id: string): Observable<any> {
-  return this.http.get<any>(`environment.apiUrl/${id}`);
-}
+// getNewsById(id: string): Observable<any> {
+//   return this.http.get<any>( environment.apiUrl + id);
+// }
 
 }
